@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #23242c;
+}
+.box {
+    width: 380px;
+    height: 420px;
+    position: relative;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.box::before {
+    content: "";
+    width: 380px;
+    top: -50%;
+    left: -50%;
+    height: 420px;
+    position: absolute;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    background: linear-gradient(0deg, transparent, #43f2ff, #43f2ff);
+}
+.box::after {
+    content: "";
+    width: 380px;
+    top: -50%;
+    left: -50%;
+    height: 420px;
+    position: absolute;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+    background: linear-gradient(0deg, transparent, #43f2ff, #43f2ff);
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.form{
+    inset: 3px;
+    position: absolute;
+    background-color: #28292d;
+    z-index: 10;
+    border-radius: 8px;
+    padding: 50px 40px;
+    flex-direction: column;
+}
+.form h2 {
+    text-align: center;
+    color: #8f8f8f;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+.inputBox {
+    width: 300px;
+    position: relative;
+    margin-top: 35px;
+}
+.inputBox input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    position: relative;
+    padding: 20px 10px 10px;
+    letter-spacing: 0.05em;
+}
+.inputBox span {
+    position: absolute;
+    color: #8f8f8f;
+    left: 0;
+    padding: 20px 0px 10px;
+    letter-spacing: 0.05em;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+    transform: translateY(-34px);
+    color: #43f2ff;
+    font-size: 0.75em;
+}
+.inputBox i {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background: #43f2ff;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i{
+    height: 40px;
+}
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+.links a {
+    text-decoration: none;
+    padding: 10px 0;
+    color: #8f8f8f;
+    font-size: 0.75em;
+}
+.links a:hover, a:nth-child(2){
+    color: #43f2ff;
+}
+input[type="submit"]{
+    width: 100px;
+    padding: 11px 25px;
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    background: #43f2ff;
+    border-radius: 4px;
+    font-weight: 600;
+}
+input[type="submit"]:hover {
+    opacity: 0.8;
+}
